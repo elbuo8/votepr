@@ -14,25 +14,24 @@ public class Candidate {
 	String name;
 	boolean selected;
 	BufferedImage photo;
-	JsonObject enviroment;
+	JsonObject environment;
 	
-	public Candidate(String name, PoliticalParty party, JsonObject enviroment) throws IOException {
+	/*
+	public Candidate(String name, PoliticalParty party, JsonObject environment) throws IOException {
 		this.name = name;
 		this.party = party;
 		selected = false;
-		this.enviroment = enviroment;
-		/*
-		JFileChooser chooser = new JFileChooser();
-		chooser.setDialogTitle("Candidate:" + this.name);
-		chooser.setFileFilter(new utilities.ImageFilter());
+		this.environment = environment;
+		photo = ImageIO.read(new File(this.environment.get(name).getAsString()));
 		
-		int exitValue = chooser.showOpenDialog(null);
-		if(exitValue == JFileChooser.APPROVE_OPTION) photo = ImageIO.read(chooser.getSelectedFile());
-		else photo = null;
-		*/
-		
-		photo = ImageIO.read(new File(this.enviroment.get(name).getAsString()));
-		
+	}
+	*/
+	
+	public Candidate(JsonObject environment) throws IOException {
+		this.environment = environment;
+		name = environment.get("Candidato").getAsString();
+		party = new PoliticalParty(environment.get("Partido").getAsString(), environment.get("Logo").getAsString());
+		photo = ImageIO.read(new File(environment.get("Foto").getAsString()));
 	}
 	
 }

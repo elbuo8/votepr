@@ -1,14 +1,8 @@
 {
-  "Partidos": {
-    "PNP": "images/pnp.png",
-    "PPD": "images/ppd.jpg",
-    "PIP": "images/pip.png",
-    "PPT": "images/ppt.jpg"
-  },
-  "Candidatos": {
-    "Bernabe": "images/bernabe.jpg",
-    "AGP": "images/agp.jpg",
-    "Fortuno": "images/fortuno.jpg",
-    "Ruben": "images/ruben.jpg"
-  }
+  "Gobernador": [
+    {"Candidato":"Bernabe", "Partido":"PPT", "Logo":"images/ppt.jpg", "Foto":"images/bernabe.jpg"},
+    {"Candidato": "AGP", "Partido":"PPD", "Logo":"images/ppd.jpg", "Foto":"images/agp.jpg"},
+    {"Candidato": "Fortuno", "Partido":"PNP", "Logo":"images/pnp.png", "Foto":"images/fortuno.jpg"},
+    {"Candidato": "Ruben", "Partido":"PIP", "Logo":"images/pip.png", "Foto":"images/ruben.jpg"}
+  ]
 }

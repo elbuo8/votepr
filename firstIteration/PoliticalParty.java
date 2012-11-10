@@ -19,11 +19,11 @@ public class PoliticalParty {
 	
 	BufferedImage logo;
 	String name;
-	JsonObject enviroment;
+	JsonObject environment;
 	
-	public PoliticalParty(String name, JsonObject enviroment) throws IOException {
+	public PoliticalParty(String name, JsonObject environment) throws IOException {
 		this.name = name;
-		this.enviroment = enviroment;
+		this.environment = environment;
 		/*
 		JFileChooser chooser = new JFileChooser();
 		chooser.setDialogTitle("Political Party: " + this.name);
@@ -33,15 +33,19 @@ public class PoliticalParty {
 		if(exitValue == JFileChooser.APPROVE_OPTION) logo = ImageIO.read(chooser.getSelectedFile());
 		else logo = null;
 		*/
-		
-		logo = ImageIO.read(new File(this.enviroment.get(name).getAsString()));
+		logo = ImageIO.read(new File(this.environment.get(name).getAsString()));
+	}
+	
+	public PoliticalParty(String name, String image) throws IOException {
+		this.name = name;
+		logo = ImageIO.read(new File(image));
 	}
 
 	/**
 	 * @param enviroment the enviroment to set
 	 */
 	public void setEnviroment(JsonObject enviroment) {
-		this.enviroment = enviroment;
+		this.environment = enviroment;
 	}
 	
 	
