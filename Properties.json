@@ -1,0 +1,14 @@
+{
+  "Partidos": {
+    "PNP": "images/pnp.png",
+    "PPD": "images/ppd.jpg",
+    "PIP": "images/pip.png",
+    "PPT": "images/ppt.jpg"
+  }
+  "Candidatos": {
+    "Bernabe": "images/bernabe.jpg",
+    "AGP": "images/agp.jpg",
+    "Fortuno": "images/fortuno.jpg",
+    "Ruben": "images/ruben.jpg"
+  }
+}

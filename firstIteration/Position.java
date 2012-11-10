@@ -1,21 +1,27 @@
 package firstIteration;
 
+import java.util.ArrayList;
+
+
 public class Position {
-	
-	Candidate[] candidates;
+
+	ArrayList<Candidate> candidates;
 	String positionName;
-	int selected;
+	int size;
 	
 	public Position(String name, int size) {
-		candidates = new Candidate[size];
-		selected = 0;
+		candidates = new ArrayList<Candidate>();
+		this.size = size;
 		positionName = name;
+		
 	}
 
 	public boolean addCandidate(Candidate candidate) {
-		if (selected == candidates.length) return false;
-		candidates[selected++] = candidate;
+		if (size == candidates.size()+1) return false;
+		candidates.add(candidate);
 		return true;
 	}
+	
+	
 	
 }

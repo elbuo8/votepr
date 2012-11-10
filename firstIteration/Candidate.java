@@ -1,11 +1,10 @@
 package firstIteration;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Candidate {
 	
@@ -19,12 +18,17 @@ public class Candidate {
 		this.party = party;
 		selected = false;
 		
+		/*
 		JFileChooser chooser = new JFileChooser();
-		chooser.setFileFilter(new FileNameExtensionFilter("jpg", "gif", "png"));
+		chooser.setDialogTitle("Candidate:" + this.name);
+		chooser.setFileFilter(new utilities.ImageFilter());
 		
 		int exitValue = chooser.showOpenDialog(null);
 		if(exitValue == JFileChooser.APPROVE_OPTION) photo = ImageIO.read(chooser.getSelectedFile());
 		else photo = null;
+		*/
+		
+		photo = ImageIO.read(new File(System.getenv(name.toUpperCase())));
 		
 	}
 	
