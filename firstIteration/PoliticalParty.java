@@ -9,6 +9,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.google.gson.JsonObject;
+
 /**
  * @author yamilasusta
  *
@@ -17,9 +19,11 @@ public class PoliticalParty {
 	
 	BufferedImage logo;
 	String name;
+	JsonObject enviroment;
 	
-	public PoliticalParty(String name) throws IOException {
+	public PoliticalParty(String name, JsonObject enviroment) throws IOException {
 		this.name = name;
+		this.enviroment = enviroment;
 		/*
 		JFileChooser chooser = new JFileChooser();
 		chooser.setDialogTitle("Political Party: " + this.name);
@@ -30,7 +34,16 @@ public class PoliticalParty {
 		else logo = null;
 		*/
 		
-		logo = ImageIO.read(new File(System.getenv(this.name)));
+		logo = ImageIO.read(new File(this.enviroment.get(name).getAsString()));
 	}
+
+	/**
+	 * @param enviroment the enviroment to set
+	 */
+	public void setEnviroment(JsonObject enviroment) {
+		this.enviroment = enviroment;
+	}
+	
+	
 
 }

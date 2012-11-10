@@ -17,7 +17,7 @@ public class Position {
 	}
 
 	public boolean addCandidate(Candidate candidate) {
-		if (size == candidates.size()+1) return false;
+		if (size == candidates.size()) return false;
 		candidates.add(candidate);
 		return true;
 	}
