@@ -6,3 +6,10 @@
     {"Candidato": "Ruben", "Partido":"PIP", "Logo":"images/pip.png", "Foto":"images/ruben.jpg"}
   ]
 }
+
+###
+{
+  "Gobernador": [
+    {"Partido": "PNP", "Logo": "/", }
+  ]
+}

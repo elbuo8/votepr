@@ -5,15 +5,16 @@ import java.util.ArrayList;
 
 public class Position {
 
-	ArrayList<Candidate> candidates;
-	String positionName;
-	int size;
-	
+	private ArrayList<Candidate> candidates;
+	private String positionName;
+	private int size;
+	private int selectedIndex;
+
 	public Position(String name, int size) {
 		candidates = new ArrayList<Candidate>();
 		this.size = size;
 		positionName = name;
-		
+
 	}
 
 	public boolean addCandidate(Candidate candidate) {
@@ -22,6 +23,19 @@ public class Position {
 		return true;
 	}
 	
+	public Candidate getCandidate(int index) {
+		return candidates.get(index);
+	}
+
+	public int totalCandidates() {
+		return size;
+	}
 	
-	
+	public void setVote(int index) {
+		if(selectedIndex == index) return;
+		candidates.get(selectedIndex).unselected();
+		selectedIndex = index;
+		candidates.get(selectedIndex).selected();
+	}
+
 }
